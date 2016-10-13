@@ -8,25 +8,16 @@
 from cm_api.api_client import ApiResource
 import socket
 import time
-import boto.ec2
-import time
 import logging
 
 logging.basicConfig()
 
-AKID='AKIAJITZTIGJKVLJGLIGFHYQ'
-ASAK='cyZ7109J0Vkn07KgfiuNLKnmMPKdf'
-REGION='us-west-1'
-
-conn = boto.ec2.connect_to_region(REGION, aws_access_key_id=AKID, aws_secret_access_key=ASAK)
-
-
 # HOSTNAME OR IP OF THE MACHINE WHERE CLOUDERA MANAGER IS INSTALLED
 CM_HOST="<<ENTER_YOUR_CLOUDERA_IP>>"
 
+# MAKE SURE TO MENTION THE VERSION OF YOUR CLOUDERA MANAGER
 api = ApiResource(CM_HOST, version=10, username='<<ENTER_CLOUDERA_MANAGER_USERNAME>>', password='<<ENTER_CLOUDERA_MANAGER_PASSWORD>>')
 dev01 = api.get_cluster('<<ENTER_YOUR_CLOUDERA_CLUSTERNAME>>')
-
 
 
 print ">> STARTING ALL SERVICES UNDER CLUSTER "
