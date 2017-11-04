@@ -23,7 +23,7 @@ dev01 = api.get_cluster('<<ENTER_YOUR_CLOUDERA_CLUSTERNAME>>')
 print ">> STARTING ALL SERVICES UNDER CLUSTER "
 dev01.start().wait()
 
-# LIST OF SERVICES
+# LIST OF SERVICES ADDED INTO AN ARRAY
 arrServices = [ 'hue', 'impala', 'zookeeper', 'oozie', 'hdfs', 'solr2', 'hbase', 'yarn', 'hive'];
 
 
